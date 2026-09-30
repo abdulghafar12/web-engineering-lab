@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Web Engineering Lab</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <!-- Skip to main content -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -74,27 +76,56 @@
 
     </figure>
     <br>
-    
-<!-- Send Feedback -->
-<section id="feedback">
 
-    <h2>Send Feedback</h2>
+    <!-- Send Feedback -->
+    <section id="feedback">
 
-    <form>
+      <h2>Send Feedback</h2>
+
+      <form>
 
         <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name">
         </div>
 
         <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
         </div>
 
-    </form>
+        <fieldset>
 
-</section>
+          <legend>Topic</legend>
+
+          <label>
+            <input type="radio" name="topic" value="question">
+            Question
+          </label>
+
+          <label>
+            <input type="radio" name="topic" value="suggestion">
+            Suggestion
+          </label>
+
+          <label>
+            <input type="radio" name="topic" value="feedback">
+            General Feedback
+          </label>
+
+        </fieldset>
+
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" cols="40"></textarea>
+        </div>
+
+        <button type="submit">Send Feedback</button>
+
+
+      </form>
+
+    </section>
 
 
 
