@@ -4,5 +4,9 @@ export function greet(name) {
 
 if (typeof document !== "undefined") {
   const heading = document.getElementById("greeting");
-  heading.textContent = greet("World");
+
+  if (heading) {
+    heading.textContent = greet("World");
+  }
 }
+
