@@ -52,6 +52,22 @@ a:hover {
 color: #003b8f;
 }
 
+a {
+  color: #0645ad;
+  text-decoration: underline;
+}
+
+.nav-link {
+  color: green;
+}
+
+nav a {
+  color: red;
+}
+
+header nav ul li a {
+  color: blue;
+}
 
 input,
 textarea {
@@ -62,7 +78,6 @@ background-color: #ffffff;
 border: 2px solid #555555;
 border-radius: 4px;
 }
-
 
 form p {
   margin-block: 0.5rem 1rem;
