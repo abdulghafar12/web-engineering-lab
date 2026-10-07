@@ -63,6 +63,11 @@ border: 2px solid #555555;
 border-radius: 4px;
 }
 
+
+form p {
+  margin-block: 0.5rem 1rem;
+}
+
 input {
 display: block;
 width: 300px;
@@ -130,6 +135,7 @@ select:focus-visible {
 outline: 3px solid #005fcc;
 outline-offset: 3px;
 }
+
 
 
 .skip-link {
