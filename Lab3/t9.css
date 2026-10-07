@@ -1,13 +1,32 @@
 @layer reset, base, components, utilities;
 
 
+
 :root {
   --space: 30px;
-  --color-bg: #ffffff;
-  --color-text: #111111;
-  --color-accent: #0645ad;
-}
 
+  --color-bg: oklch(98% 0.01 250);
+  --color-text: oklch(20% 0.02 250);
+  --color-accent: oklch(55% 0.2 250);
+
+  --color-surface: color-mix(
+    in oklch,
+    var(--color-bg) 90%,
+    var(--color-text)
+  );
+
+  --color-border: color-mix(
+    in oklch,
+    var(--color-text) 25%,
+    var(--color-bg)
+  );
+
+  --color-muted: color-mix(
+    in oklch,
+    var(--color-text) 55%,
+    var(--color-bg)
+  );
+}
 
 @layer reset {
 
@@ -87,7 +106,7 @@
     font: inherit;
     color: var(--color-text);
     background-color: var(--color-bg);
-    border: 2px solid #555555;
+    border: 2px solid var(--color-border);
     border-radius: 4px;
   }
 
@@ -103,7 +122,6 @@
 
 }
 
-
 @layer utilities {
 
   .skip-link {
@@ -116,6 +134,10 @@
     background-color: var(--color-text);
     border: 2px solid var(--color-bg);
     border-radius: 4px;
+  }
+
+  .text-muted {
+    color: var(--color-muted);
   }
 
 }
