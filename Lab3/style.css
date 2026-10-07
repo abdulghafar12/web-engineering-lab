@@ -65,7 +65,7 @@ nav a {
   color: red;
 }
 
-header nav ul li a {
+:where(header nav ul li a) {
   color: blue;
 }
 
