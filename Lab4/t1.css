@@ -45,6 +45,7 @@ list-style: none;
 padding: 0;
 }
 
+/* Task 1: Header Flexbox Layout */
 
 header {
   display: flex;
@@ -69,6 +70,7 @@ nav a {
   color: var(--color-text-alt);
   text-decoration: none;
 }
+/* Task 2: Navigation Flex Row */
 
 nav ul {
   display: flex;
@@ -77,6 +79,7 @@ nav ul {
   padding: 0;
   margin: 0;
 }
+/* Task 3: Figure Flexbox Layout */
 
 figure {
   display: flex;
@@ -85,6 +88,7 @@ figure {
   gap: 15px;
 }
 
+/* Task 4: Two-column CSS Grid */
 
 #schedule {
   display: grid;
@@ -92,6 +96,7 @@ figure {
   gap: 20px;
 }
 
+/* Heading spans both columns */
 
 .span-all {
   grid-column: 1 / -1;
@@ -108,6 +113,7 @@ color: var(--color-accent);
 text-decoration: underline;
 }
 
+/* Task 5: Form Two-Column Grid */
 
 form {
   display: grid;
@@ -115,6 +121,7 @@ form {
   gap: 20px;
 }
 
+/* Make selected elements span both columns */
 
 .span-all {
   grid-column: 1 / -1;
@@ -122,6 +129,7 @@ form {
 
 
 
+/* Attractive Office Hours Table */
 
 .office-table {
   width: 100%;
@@ -279,6 +287,7 @@ height: 60px;
 pointer-events: none;
 }
 
+/* Task 6: Responsive Layout for Narrow Screens */
 
 @media (max-width: 600px) {
 
@@ -286,4 +295,22 @@ pointer-events: none;
   form {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* Task 9: Selected Row Styling */
+
+.office-table tbody tr.selected {
+  background-color: #dbeafe;
+  color: #0645ad;
+  font-weight: bold;
+}
+
+.office-table tbody tr.selected button {
+  background-color: #15803d;
+  border-color: #15803d;
+}
+
+.office-table tbody tr.selected button:hover {
+  background-color: #166534;
 }
