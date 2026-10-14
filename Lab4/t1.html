@@ -14,10 +14,10 @@
 
   <header>
     <h1 id="greeting">WellCome to My page</h1>
-    <nav>
+    <nav aria-label="Main navigation">
       <ul>
         <li>
-          <a href="#office-hours" aria-current="location">Office Hours</a>
+          <a href="#schedule">Office Hours</a>
         </li>
         <li>
           <a href="#feedback">Send Feedback</a>
@@ -28,8 +28,8 @@
 
   <main id="main-content">
 
-    <section id="schedule">
-      <h2 class="span-all">Office Hours</h2>
+    <section id="schedule" aria-labelledby="schedule-heading">
+      <h2 id="schedule-heading" class="span-all">Office Hours</h2>
       <br>
      <table class="office-table">
   <caption>Weekly Office Hours</caption>
@@ -95,22 +95,18 @@
     </figure>
     <br>
 
-    <section id="feedback">
-      <h2>Send Feedback</h2>
-      <form>
+    <section id="feedback" aria-labelledby="feedback-heading">
+      <h2 id="feedback-heading">Send Feedback</h2>
+      <form aria-labelledby="feedback-heading">
         <div>
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required aria-describedby="name-hint" placeholder="Enter your name">
-          <span id="name-hint">
-          </span>
+          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Enter your name">
         </div>
 
         <div>
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required aria-describedby="email-hint" placeholder="Enter your email">
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="Enter your email">
 
-          <span id="email-hint">
-          </span>
         </div>
 
         <fieldset class="span-all">
