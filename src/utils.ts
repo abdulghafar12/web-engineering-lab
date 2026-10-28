@@ -1,16 +1,32 @@
-// Task 11: Utility Functions
-
-// Delay function
-export function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+export interface Slot {
+  day: string;
+  start: string;
+  end: string;
+  room: string;
 }
 
-// Counter function
-export function makeCounter() {
-  let count = 0;
+export const delay = (ms: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(resolve, ms));
 
-  return function () {
-    count++;
-    return count;
-  };
+export function makeCounter(): () => number {
+  let count = 0;
+  return () => ++count;
+}
+
+export function getRequired<T extends Element>(
+  selector: string,
+  root: ParentNode = document,
+): T {
+  const element = root.querySelector<T>(selector);
+
+  if (!element) {
+    throw new Error(`Required element not found: ${selector}`);
+  }
+
+  return element;
+}
+
+export function describeSlot(slot: Slot): string
+ {
+  return `${slot.day}, ${slot.start}–${slot.end}, Room ${slot.room}`;
 }
