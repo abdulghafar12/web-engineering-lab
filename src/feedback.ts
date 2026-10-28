@@ -1,27 +1,30 @@
 
-const form = document.querySelector("form");
-const nameInput = form.querySelector("#name");
-const emailInput = form.querySelector("#email");
-const status = document.querySelector("#status");
+import { getRequired } from "./utils.js";
 
-function showError(input, message) {
+const form = getRequired<HTMLFormElement>("form");
+const nameInput = getRequired<HTMLInputElement>("#name", form);
+const emailInput = getRequired<HTMLInputElement>("#email", form);
+const feedbackStatus = getRequired<HTMLParagraphElement>("#status");
+
+function showError(input: HTMLInputElement, message: string): void {
   const error = document.createElement("span");
   error.className = "error";
   error.setAttribute("role", "alert");
   error.textContent = message;
+
   input.setAttribute("aria-invalid", "true");
   input.after(error);
 }
 
-function clearErrors() {
-  form.querySelectorAll(".error").forEach((el) => el.remove());
+function clearErrors(): void {
+  form.querySelectorAll(".error").forEach((error) => error.remove());
 
-  form.querySelectorAll("[aria-invalid]").forEach((el) =>
-    el.removeAttribute("aria-invalid")
-  );
+  form.querySelectorAll("[aria-invalid]").forEach((input) => {
+    input.removeAttribute("aria-invalid");
+  });
 }
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", (event: SubmitEvent) => {
   event.preventDefault();
 
   clearErrors();
@@ -42,7 +45,9 @@ form.addEventListener("submit", (event) => {
   }
 
   if (valid) {
-    status.textContent = `Thanks, ${name}! Your feedback was received.`;
+    feedbackStatus.textContent =
+      `Thanks, ${name}! Your feedback was received.`;
+
     form.reset();
   }
 });
